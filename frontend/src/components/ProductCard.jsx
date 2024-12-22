@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
         height="200"
-        image={product.image} // Replace with actual product image URL
+        image={product.image}
         alt={product.name}
       />
       <CardContent>
@@ -47,7 +47,6 @@ const ProductCard = ({ product }) => {
   );
 };
 
-// Prop Types Validation
 ProductCard.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,

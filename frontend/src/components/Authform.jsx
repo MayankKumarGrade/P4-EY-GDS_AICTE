@@ -49,7 +49,6 @@ const AuthForm = ({ title, onSubmit, inputs, submitButtonText, footerText }) => 
   );
 };
 
-// Prop Types Validation
 AuthForm.propTypes = {
   title: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,

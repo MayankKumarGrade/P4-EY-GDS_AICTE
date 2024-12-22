@@ -39,7 +39,6 @@ const Dashboard = () => {
       <h1>Welcome, {user.fullName}!</h1>
       <p>This is your dashboard.</p>
       <button onClick={logout}>Logout</button>
-      {/* Add more user-specific content here */}
     </div>
   );
 };

@@ -4,10 +4,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
-import { AuthProvider } from './context/AuthContext'; // Import the AuthProvider
+import { AuthProvider } from './context/AuthContext';
 import './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Footer from './components/Footer'; // Import the Footer
+import Footer from './components/Footer';
 
 const darkTheme = createTheme({
   palette: {
@@ -17,7 +17,7 @@ const darkTheme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}> {/* Wrap with ThemeProvider */}
+    <ThemeProvider theme={darkTheme}>
       <AuthProvider>
       <Router>
         <Navbar />

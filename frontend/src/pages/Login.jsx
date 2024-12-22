@@ -8,18 +8,15 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Make sure AuthContext is correctly imported
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Use full URL in the POST request (adjust based on your backend URL)
       const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       
-      // Call the login function from AuthContext
       login(data.token);
       
-      // Redirect to dashboard upon successful login
       navigate('/dashboard');
     } catch (error) {
       console.error("Login error:", error.response ? error.response.data : error.message);

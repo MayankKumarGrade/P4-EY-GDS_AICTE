@@ -12,19 +12,18 @@ code {
     monospace;
 }
 
-/* Basic Styling */
 body {
   font-family: sans-serif;
   line-height: 1.6;
-  margin: 0; /* Remove default body margin */
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text color */
+  margin: 0;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 h1, h2, h3 {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #bb86fc; /* Purple accent color */
+  color: #bb86fc;
 }
 
 a {
@@ -36,18 +35,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Container for centering content */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Styles for Hero Section */
 .hero {
   text-align: center;
   padding: 40px 0;
-  background-color: #1e1e1e; /* Slightly lighter dark background */
+  background-color: #1e1e1e;
   margin-bottom: 20px;
 }
 
@@ -57,11 +54,10 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* Styles for Category Section */
 .categories {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap; /* Allows categories to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .category {
@@ -73,18 +69,17 @@ a:hover {
   max-width: 200px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.2s; /* Smooth hover effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .category img:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .categories {
-    flex-direction: column; /* Stack categories vertically on smaller screens */
+    flex-direction: column;
     align-items: center;
   }
 }

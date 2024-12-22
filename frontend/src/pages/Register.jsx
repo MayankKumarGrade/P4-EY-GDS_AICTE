@@ -12,7 +12,6 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Make sure the full URL is included
       await axios.post('http://localhost:5000/api/auth/register', { fullName, email, password }); 
       navigate('/login');
     } catch (error) {
