@@ -7,13 +7,13 @@ const Home = () => {
           name: 'Stylish T-Shirt',
           description: 'A comfortable and trendy t-shirt.',
           price: 29.99,
-          image: 'tshirt.jpg',
+          image: 'tshirt.png',
         },
         {
           name: 'Cool Jeans',
           description: 'Classic denim jeans for any occasion.',
-          price: 59.99,
-          image: 'jeans.jpg',
+          price: 69.99,
+          image: 'jeans.png',
         },
         // ... more products
     ];
@@ -26,22 +26,21 @@ const Home = () => {
                     <p>Discover the latest fashion trends</p>
                     <button className="cta-btn">Shop Now</button>
                 </div>
-                <img src="hero-image.jpg" alt="Fashion Models" className="hero-image" />
             </section>
 
             <section className="categories">
                 <h2>Shop by Category</h2>
                 <div className="category-cards">
                     <div className="category-card">
-                        <img src="mens-category.jpg" alt="Men's Fashion" />
+                        <img src="mens-category.png" alt="Men's Fashion" />
                         <h3>Mens</h3>
                     </div>
                     <div className="category-card">
-                        <img src="womens-category.jpg" alt="Women's Fashion" />
+                        <img src="womens-category.png" alt="Women's Fashion" />
                         <h3>Womens</h3>
                     </div>
                     <div className="category-card">
-                        <img src="accessories-category.jpg" alt="Accessories" />
+                        <img src="shoes.png" alt="Accessories" />
                         <h3>Accessories</h3>
                     </div>
                 </div>
