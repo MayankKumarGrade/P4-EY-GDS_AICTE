@@ -27,7 +27,7 @@ const Footer = () => {
         color="text.secondary"
         component="p"
       >
-        Something here to give the footer a purpose!
+        React, Express, Node.js, MongoDB atlas
       </Typography>
       <Copyright />
     </Box>

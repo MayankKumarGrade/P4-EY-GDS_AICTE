@@ -8,12 +8,23 @@ import Paper from '@mui/material/Paper';
 
 const AuthForm = ({ title, onSubmit, inputs, submitButtonText, footerText }) => {
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper elevation={3} sx={{ p: 3, mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography component="h1" variant="h5">
+    <Container component="main" maxWidth="sm" sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Paper
+        elevation={4}
+        sx={{
+          p: 4,
+          borderRadius: '20px',
+          background: 'linear-gradient(135deg, #f8fafc, #e3f2fd)',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+          textAlign: 'center',
+          maxWidth: 400,
+          width: '100%',
+        }}
+      >
+        <Typography component="h1" variant="h4" fontWeight="bold" gutterBottom>
           {title}
         </Typography>
-        <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 1, width: '100%' }}>
+        <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 2 }}>
           {inputs.map((input) => (
             <TextField
               key={input.label}
@@ -28,18 +39,45 @@ const AuthForm = ({ title, onSubmit, inputs, submitButtonText, footerText }) => 
               type={input.type}
               value={input.value}
               onChange={(e) => input.onChange(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: '10px',
+                },
+                '& .MuiInputLabel-root': {
+                  color: '#888',
+                },
+                '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#ff6f61',
+                },
+                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#ff6f61',
+                },
+              }}
             />
           ))}
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{
+              mt: 3,
+              mb: 2,
+              backgroundColor: '#ff6f61',
+              color: '#fff',
+              fontWeight: 'bold',
+              borderRadius: '50px',
+              py: 1.2,
+              transition: 'all 0.3s ease-in-out',
+              '&:hover': {
+                backgroundColor: '#e45a50',
+                transform: 'scale(1.05)',
+              },
+            }}
           >
             {submitButtonText}
           </Button>
           {footerText && (
-            <Typography variant="body2" align="center">
+            <Typography variant="body2" align="center" sx={{ mt: 2 }}>
               {footerText}
             </Typography>
           )}

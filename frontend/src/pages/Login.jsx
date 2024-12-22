@@ -14,9 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-      
       login(data.token);
-      
       navigate('/dashboard');
     } catch (error) {
       console.error("Login error:", error.response ? error.response.data : error.message);
@@ -26,7 +24,7 @@ const Login = () => {
 
   return (
     <AuthForm
-      title="Login"
+      title="Welcome Back 👋"
       onSubmit={handleSubmit}
       inputs={[
         { label: 'Email', type: 'email', value: email, onChange: setEmail },
@@ -35,7 +33,7 @@ const Login = () => {
       submitButtonText="Login"
       footerText={
         <>
-          {`Don't have an account?`} <Link to="/register">Register</Link>
+          {"Don't have an account?"} <Link to="/register" style={{ color: '#ff6f61', fontWeight: 'bold' }}>Register</Link>
         </>
       }
     />

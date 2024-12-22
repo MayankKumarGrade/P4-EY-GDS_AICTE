@@ -1,38 +1,42 @@
 import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import './Navbar.css';
 
 const Navbar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
   const handleLogout = () => {
     logout();
-    navigate('/')
+    navigate('/');
+  };
+
+  const handleLogoClick = () => {
+    if (isLoggedIn) {
+      navigate('/dashboard');
+    } else {
+      navigate('/');
+    }
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            E-Commerce
-          </Typography>
-          {!isLoggedIn ? (
-            <div>
-              <Button color="inherit" component={Link} to="/login">Login</Button>
-              <Button color="inherit" component={Link} to="/register">Register</Button>
-            </div>
-          ) : (
-            <Button color="inherit" onClick={handleLogout}>Logout</Button>
-          )}
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <div className="navbar">
+      <div className="logo" onClick={handleLogoClick}>
+        <h2>E-Commerce</h2>
+      </div>
+      <div className="nav-links">
+        <Link to="/" className="nav-link">Home</Link>
+        {isLoggedIn ? (
+          <button className="nav-btn" onClick={handleLogout}>Logout</button>
+        ) : (
+          <>
+            <Link to="/login" className="nav-link">Login</Link>
+            <Link to="/register" className="nav-link">Register</Link>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 

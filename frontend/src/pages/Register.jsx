@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', { fullName, email, password }); 
+      await axios.post('http://localhost:5000/api/auth/register', { fullName, email, password });
       navigate('/login');
     } catch (error) {
       console.error("Registration error:", error.response ? error.response.data : error.message);
@@ -22,7 +22,7 @@ const Register = () => {
 
   return (
     <AuthForm
-      title="Register"
+      title="Create Your Account 🚀"
       onSubmit={handleSubmit}
       inputs={[
         { label: 'Full Name', type: 'text', value: fullName, onChange: setFullName },
@@ -32,7 +32,7 @@ const Register = () => {
       submitButtonText="Register"
       footerText={
         <>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account? <Link to="/login" style={{ color: '#ff6f61', fontWeight: 'bold' }}>Login</Link>
         </>
       }
     />
