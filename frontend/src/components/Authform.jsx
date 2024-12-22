@@ -14,14 +14,15 @@ const AuthForm = ({ title, onSubmit, inputs, submitButtonText, footerText }) => 
         sx={{
           p: 4,
           borderRadius: '20px',
-          background: 'linear-gradient(135deg, #f8fafc, #e3f2fd)',
+          background: 'linear-gradient(135deg,rgba(55, 176, 246, 0.67),rgb(0, 247, 255))',
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
           textAlign: 'center',
           maxWidth: 400,
           width: '100%',
+          color: 'black',
         }}
       >
-        <Typography component="h1" variant="h4" fontWeight="bold" gutterBottom>
+        <Typography component="h1" variant="h4" fontWeight="bold"  gutterBottom>
           {title}
         </Typography>
         <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 2 }}>
