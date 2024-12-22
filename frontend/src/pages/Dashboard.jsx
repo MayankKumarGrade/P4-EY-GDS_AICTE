@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetchProfile = async () => {
       try {
         const config = {
-          headers: {
+          headers: { 
             Authorization: `Bearer ${token}`,
           },
         };
