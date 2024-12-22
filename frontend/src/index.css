@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Basic Styling */
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0; /* Remove default body margin */
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #bb86fc; /* Purple accent color */
+}
+
+a {
+  color: #bb86fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styles for Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #1e1e1e; /* Slightly lighter dark background */
+  margin-bottom: 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Styles for Category Section */
+.categories {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allows categories to wrap on smaller screens */
+}
+
+.category {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.category img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.category img:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categories {
+    flex-direction: column; /* Stack categories vertically on smaller screens */
+    align-items: center;
+  }
+}
