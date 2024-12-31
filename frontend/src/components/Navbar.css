@@ -1,0 +1,158 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+    width: 7em;
+    max-width: 100%;
+    height: auto;
+}
+
+.nav {
+    display: none;
+}
+
+.navlink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #2d3748; 
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out; 
+}
+
+.navlink:hover {
+    color: #1a202c;
+}
+
+.navlink p {
+    margin: 0;
+}
+
+.hr {
+    width: 50%;
+    border: none;
+    height: 2px;
+    background-color: #4a5568;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+}
+
+.navlink:hover .hr {
+    transform: scaleX(2);
+    opacity: 1;
+    background-color: #2d3748;
+}
+
+.navlink.active .hr {
+    transform: scaleX(1);
+    opacity: 1;
+    background-color: #2d3748;
+}
+
+.navlink.active {
+    color: #1a202c;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sicon {
+    width: 1.25rem;
+    cursor: pointer;
+    color: black;
+}
+
+.sicon:hover, .uicon:hover, .carticon:hover {
+    color: #747474;
+}
+
+.user {
+    position: relative;
+}
+
+.uicon {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f1f5f9;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    width: 9rem;
+    color: #4b5563; 
+    z-index: 10;
+    border-radius: 10%;
+    cursor: pointer; 
+}
+
+.dmp:hover {
+    cursor: pointer; 
+    color:black;
+}
+
+.user:hover .dropdown-menu {
+    display: block;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+}
+
+.carticon {
+    position: relative;
+    cursor: pointer;
+    color: black;
+}
+
+.cartdot {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  background-color: black;
+  color: white;
+  font-size: 8px;
+  border-radius: 50%;
+}
+
+.menuicon {
+width: 1.25rem;
+  cursor: pointer;
+}
+
+@media (min-width: 850px) {
+  .nav {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  .menuicon {
+    display: none;
+  }
+}
