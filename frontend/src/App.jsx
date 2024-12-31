@@ -12,6 +12,7 @@ import PlaceOrder from './pages/PlaceOrder'
 import './App.css'
 import NavBar from './components/NavBar'
 import './styles/tailwind.css';
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
         <Route path= '/order' element = { <Order /> }/>
         <Route path= '/product' element = { <Product /> }/>
       </Routes>
-    
+      <Footer/>
     </div>
   )
 }
