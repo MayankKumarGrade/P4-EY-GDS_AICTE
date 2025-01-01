@@ -44,7 +44,7 @@ export const products = [
         price: 399,
         image: [m1],
         category: "Men",
-        subcategory: "Oversized T-Shirts",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345451,
         bestseller: true
@@ -56,7 +56,7 @@ export const products = [
         price: 799,
         image: [w11, w12, w13],
         category: "Women",
-        subcategory: "Ethnic wear",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345461,
         bestseller: false
@@ -68,7 +68,7 @@ export const products = [
         price: 299,
         image: [m2],
         category: "Men",
-        subcategory: "Casual Shirts",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date:  1716621345452,
         bestseller: false
@@ -80,7 +80,7 @@ export const products = [
         price: 699,
         image: [w21, w22],
         category: "Women",
-        subcategory: "Ethnic Wear",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345462,
         bestseller: false
@@ -92,7 +92,7 @@ export const products = [
         price: 399,
         image: [m3],
         category: "Men",
-        subcategory: "Floral Shirts",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345453,
         bestseller: false
@@ -104,7 +104,7 @@ export const products = [
         price: 599,
         image: [w31, w32],
         category: "Women",
-        subcategory: "Party Dresses",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345463,
         bestseller: false
@@ -116,7 +116,7 @@ export const products = [
         price: 499,
         image: [m4],
         category: "Men",
-        subcategory: "Formal Shirts",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345454,
         bestseller: false
@@ -128,7 +128,7 @@ export const products = [
         price: 999,
         image:  [w41, w42],
         category: "Women",
-        subcategory: "Anarkali Kurtis",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345464,
         bestseller: false
@@ -140,7 +140,7 @@ export const products = [
         price: 599,
         image: [m5],
         category: "Men",
-        subcategory: "Sweatshirts & Hoodies",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345455,
         bestseller: false
@@ -152,7 +152,7 @@ export const products = [
         price: 999,
         image: [w51, w52],
         category: "Women",
-        subcategory: "Office Wear",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345465,
         bestseller: false
@@ -164,7 +164,7 @@ export const products = [
         price: 366,
         image: [m6],
         category: "Men",
-        subcategory: "Hoodies & Sweatshirts",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345456,
         bestseller: false
@@ -176,7 +176,7 @@ export const products = [
         price: 1299,
         image: [w61, w62],
         category: "Women",
-        subcategory: "Traditional Wear",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345466,
         bestseller:true
@@ -188,7 +188,7 @@ export const products = [
         price: 466,
         image: [m7],
         category: "Men",
-        subcategory: "Sweatshirts & Hoodies",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345457,
         bestseller: true
@@ -200,7 +200,7 @@ export const products = [
         price: 2999,
         image: [w71, w72],
         category: "Women",
-        subcategory: "Sarees",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date:1716621345467,
         bestseller: false
@@ -212,7 +212,7 @@ export const products = [
         price: 689,
         image: [m8],
         category: "Men",
-        subcategory: "Knitwear",
+        subcategory: "Topwear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345458,
         bestseller: false
@@ -224,7 +224,7 @@ export const products = [
         price: 3999,
         image: [w81],
         category: "Women",
-        subcategory: "Lehenga Choli",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345468,
         bestseller: true
@@ -236,7 +236,7 @@ export const products = [
         price: 699,
         image: [m9],
         category: "Men",
-        subcategory: "Suits & Blazers",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345459,
         bestseller: false
@@ -248,7 +248,7 @@ export const products = [
         price: 999,
         image: [w91],
         category: "Women",
-        subcategory: "Traditional Wear",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345469,
         bestseller: false
@@ -260,7 +260,7 @@ export const products = [
         price: 999,
         image: [m10],
         category: "Men",
-        subcategory: "Tailored Blazers",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345460,
         bestseller: false
@@ -272,7 +272,7 @@ export const products = [
         price: 999,
         image: [w101],
         category: "Women",
-        subcategory: "Casual Wear",
+        subcategory: "Bodywear",
         sizes: ['S', 'M', 'L', 'XL'],
         date: 1716621345470,
         bestseller: false

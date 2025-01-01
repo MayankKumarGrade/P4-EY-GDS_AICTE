@@ -7,14 +7,14 @@ const NewsLetter = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSuccessMessage('Thank you for subscribing! 🎉');
+    setSuccessMessage('Thank you for subscribing us! 🎉');
     setEmail('');
   };
 
   return (
     <div className="newsletter-container">
       <p className="newsletter-title">
-        SUBSCRIBE TO OUR NEWSLETTER NOW!!
+        Subscribe To Our Newsletter Now!!
       </p>
       <p className="newsletter-description">
         Don&apos;t Miss Out! 🎉 Join our community for insider deals, new arrivals, and all things awesome. Get the scoop in your inbox!!
