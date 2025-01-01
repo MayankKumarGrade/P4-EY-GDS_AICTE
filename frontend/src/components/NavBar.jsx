@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { assets } from '../assets/assets';
 import './Navbar.css';
 import { Link, NavLink } from 'react-router-dom';
 import { Search, User, ShoppingCart, AlignRight, Cross } from 'lucide-react';
+import { ShopContext } from '../context/ShopContext';
 
 const NavBar = () => {
 
     const[visible, setVisible] = useState(false);
+    const {setShowSearch} = useContext(ShopContext);
 
   return (
     <div className="navbar">
@@ -38,7 +40,7 @@ const NavBar = () => {
           </NavLink>
       </ul>
       <div className="search">
-            <Search className="sicon" />
+            <Search onClick={()=>setShowSearch(true)} className="sicon" />
             <div className="user">
                 <User className="uicon" />
                 <div className="dropdown-menu">

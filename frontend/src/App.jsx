@@ -13,11 +13,13 @@ import './App.css'
 import NavBar from './components/NavBar'
 import './styles/tailwind.css';
 import Footer from './components/Footer'
+import SearchBar from './components/SearchBar'
 
 const App = () => {
   return (
     <div className="container">
       <NavBar />
+      <SearchBar />
       <Routes>
         <Route path= '/' element = { <Home /> }/>
         <Route path= '/about' element = { <About /> }/>
