@@ -40,7 +40,7 @@ const NavBar = () => {
           </NavLink>
       </ul>
       <div className="search">
-            <Search onClick={()=>setShowSearch(true)} className="sicon" />
+            <Link to="/collection"><Search onClick={()=>setShowSearch(true)} className="sicon" /></Link>
             <div className="user">
                 <User className="uicon" />
                 <div className="dropdown-menu">
