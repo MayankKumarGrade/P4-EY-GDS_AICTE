@@ -14,10 +14,13 @@ import NavBar from './components/NavBar'
 import './styles/tailwind.css';
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div className="container">
+      <ToastContainer/>
       <NavBar />
       <SearchBar />
       <Routes>
@@ -30,7 +33,7 @@ const App = () => {
         <Route path= '/order' element = { <Order /> }/>
         <Route path= '/placeorder' element = { <PlaceOrder /> }/>
         <Route path= '/order' element = { <Order /> }/>
-        <Route path= '/product' element = { <Product /> }/>
+        <Route path= '/product/:productId' element = { <Product /> }/>
       </Routes>
       <Footer/>
     </div>

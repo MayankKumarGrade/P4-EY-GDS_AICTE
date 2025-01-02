@@ -8,7 +8,7 @@ import { ShopContext } from '../context/ShopContext';
 const NavBar = () => {
 
     const[visible, setVisible] = useState(false);
-    const {setShowSearch} = useContext(ShopContext);
+    const {setShowSearch, getCartCount} = useContext(ShopContext);
 
   return (
     <div className="navbar">
@@ -51,7 +51,7 @@ const NavBar = () => {
             </div>
             <Link to="/cart" className="carticon">
             <ShoppingCart />
-            <p className="cartdot">10</p>
+            <p className="cartdot">{getCartCount()}</p>
             </Link>
             <AlignRight onClick={()=>setVisible(true)} className="menuicon"/>
       </div>
