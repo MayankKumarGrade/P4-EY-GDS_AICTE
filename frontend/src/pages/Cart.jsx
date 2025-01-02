@@ -5,7 +5,7 @@ import { Trash2 } from 'lucide-react';
 import CartTotal from '../components/CartTotal';
 
 const Cart = () => {
-  const {products, currency, cartItems, updateQuantity} = useContext(ShopContext);
+  const {products, currency, cartItems, updateQuantity, navigate} = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -57,9 +57,12 @@ const Cart = () => {
           })
         }     
     </div>
-    <div className='flex justify-end mt-4 my-20'>
+    <div className='flex flex-col items-end justify-end mt-4 my-20'>
       <div className='w-full sm:w-[450px]'>
         <CartTotal />
+      </div>
+      <div>
+          <button onClick={()=>navigate('/place-order')} className=' bg-black text-white text-sm my-2 px-8 py-3 rounded-lg shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition-all duration-200 transform hover:translate-y-2'>MAKE IT YOUR&apos;S</button>
       </div>
     </div>
     </div>

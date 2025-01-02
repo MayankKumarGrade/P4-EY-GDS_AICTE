@@ -29,11 +29,21 @@ import w101 from './w10.1.jpg'
 
 import logo from './logo.png'
 import hero from './hero.jpg'
+import paypal from './paypal.png'
+import razorpay from './razorpay.png'
+import stripe from './stripe.png'
+import aboutus from './aboutus.jpg'
+import contactus from './contactus.jpg'
 
 
 export const assets = {
     logo,
     hero,
+    paypal,
+    razorpay,
+    stripe,
+    aboutus, 
+    contactus
 }
 
 export const products = [

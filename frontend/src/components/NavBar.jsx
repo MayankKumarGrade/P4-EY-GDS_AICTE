@@ -42,7 +42,7 @@ const NavBar = () => {
       <div className="search">
             <Link to="/collection"><Search onClick={()=>setShowSearch(true)} className="sicon" /></Link>
             <div className="user">
-                <User className="uicon" />
+                <Link to='/login'><User className="uicon" /></Link>
                 <div className="dropdown-menu">
                     <p className='dmp'>My Profile</p>
                     <p className='dmp'>Orders</p>

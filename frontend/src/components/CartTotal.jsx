@@ -4,7 +4,7 @@ import Title from './Title';
 
 const CartTotal = () => {
 
-    const{delivery_fee, currency, getCartAmount, navigate} = useContext(ShopContext);
+    const{delivery_fee, currency, getCartAmount} = useContext(ShopContext);
 
   return (
     <div className='w-full border border-gray-300 rounded-lg shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition-all duration-200 transform hover:translate-y-2'>
@@ -27,9 +27,6 @@ const CartTotal = () => {
           <b>Total</b>
           <b>{currency}{getCartAmount() === 0 ? 0 : getCartAmount() + delivery_fee}.00</b>
         </div>
-      </div>
-      <div>
-          <button onClick={()=>navigate('/place-order')} className='flex justify-center items-center bg-black text-white rounded-lg text-sm my-2 px-8 py-3'>MALE IT YOUR&apos;S</button>
       </div>
     </div>
   )
