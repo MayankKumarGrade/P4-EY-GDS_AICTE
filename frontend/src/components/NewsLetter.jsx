@@ -13,13 +13,12 @@ const NewsLetter = () => {
 
   return (
     <div className="newsletter-container">
-      <p className="newsletter-title">
-        Subscribe To Our Newsletter Now!!
-      </p>
+      <p className="newsletter-title">Subscribe To Our Newsletter Now!!</p>
       <p className="newsletter-description">
-        Don&apos;t Miss Out! 🎉 Join our community for insider deals, new arrivals, and all things awesome. Get the scoop in your inbox!!
+        Don&apos;t Miss Out! 🎉 Join our community for insider deals, new
+        arrivals, and all things awesome. Get the scoop in your inbox!!
       </p>
-      
+
       <form onSubmit={handleSubmit} className="newsletter-form">
         <input
           type="email"
@@ -31,10 +30,7 @@ const NewsLetter = () => {
         />
 
         {email && (
-          <button
-            type="submit"
-            className="newsletter-button"
-          >
+          <button type="submit" className="newsletter-button">
             Subscribe
           </button>
         )}

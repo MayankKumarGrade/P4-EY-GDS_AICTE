@@ -1,26 +1,25 @@
 .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
-  
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 5vw;
-      padding-right: 5vw;
-    }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 7vw;
+    padding-right: 7vw;
   }
-  
-  @media (min-width: 768px) {
-    .container {
-      padding-left: 7vw;
-      padding-right: 7vw;
-    }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
-  
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 10vw;
-      padding-right: 10vw;
-    }
-  }
-  
+}

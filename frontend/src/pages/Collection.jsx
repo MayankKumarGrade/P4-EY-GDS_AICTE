@@ -15,14 +15,18 @@ const Collection = () => {
   const toggleCategory = (e) => {
     const value = e.target.value;
     setCategory((prev) =>
-      prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
     );
   };
 
   const toggleSubcategory = (e) => {
     const value = e.target.value;
     setSubcategory((prev) =>
-      prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value]
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
     );
   };
 
@@ -42,11 +46,15 @@ const Collection = () => {
     }
 
     if (category.length > 0) {
-      tempProducts = tempProducts.filter((item) => category.includes(item.category));
+      tempProducts = tempProducts.filter((item) =>
+        category.includes(item.category)
+      );
     }
 
     if (subcategory.length > 0) {
-      tempProducts = tempProducts.filter((item) => subcategory.includes(item.subcategory));
+      tempProducts = tempProducts.filter((item) =>
+        subcategory.includes(item.subcategory)
+      );
     }
 
     switch (sort) {
@@ -68,30 +76,49 @@ const Collection = () => {
   }, [category, subcategory, sort, products, search, showSearch]);
 
   return (
-    <div className={`flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t ${showSearch ? '' : 'mt-32'}`}>
-
+    <div
+      className={`flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t ${showSearch ? '' : 'mt-32'}`}
+    >
       <div className="min-w-60">
         <p
           onClick={() => setShowFilter(!showFilter)}
           className="my-2 text-xl flex items-center cursor-pointer gap-2"
         >
           FILTERS
-          <ChevronDown className={`h-3 sm:hidden ${showFilter ? 'rotate-180' : ''}`} />
+          <ChevronDown
+            className={`h-3 sm:hidden ${showFilter ? 'rotate-180' : ''}`}
+          />
         </p>
 
-        <div className={`border border-gray-300 rounded-2xl pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
+        <div
+          className={`border border-gray-300 rounded-2xl pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}
+        >
           <p className="mb-3 text-sm font-medium">CATEGORIES</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <label>
-              <input type="checkbox" value="Men" onChange={toggleCategory} checked={category.includes('Men')} /> Men
+              <input
+                type="checkbox"
+                value="Men"
+                onChange={toggleCategory}
+                checked={category.includes('Men')}
+              />{' '}
+              Men
             </label>
             <label>
-              <input type="checkbox" value="Women" onChange={toggleCategory} checked={category.includes('Women')} /> Women
+              <input
+                type="checkbox"
+                value="Women"
+                onChange={toggleCategory}
+                checked={category.includes('Women')}
+              />{' '}
+              Women
             </label>
           </div>
         </div>
 
-        <div className={`border border-gray-300 rounded-2xl pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`}>
+        <div
+          className={`border border-gray-300 rounded-2xl pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`}
+        >
           <p className="mb-3 text-sm font-medium">TYPE</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <label>
@@ -151,7 +178,13 @@ const Collection = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
           {filteredProducts.map((item, index) => (
-            <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} />
+            <ProductItem
+              key={index}
+              name={item.name}
+              id={item._id}
+              price={item.price}
+              image={item.image}
+            />
           ))}
         </div>
       </div>
