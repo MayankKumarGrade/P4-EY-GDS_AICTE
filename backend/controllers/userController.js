@@ -14,9 +14,7 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Invalid email." });
+      return res.json({ success: false, message: "Invalid email." });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
@@ -25,13 +23,11 @@ const loginUser = async (req, res) => {
       const token = generateToken(user._id);
       res.json({ success: true, token });
     } else {
-      return res
-        .status(400)
-        .json({ success: false, message: "Invalid password." });
+      return res.json({ success: false, message: "Invalid password." });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
+    res.json({ success: false, message: "Server error" });
   }
 };
 
@@ -40,9 +36,7 @@ const registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Please fill in all fields" });
+      return res.json({ success: false, message: "Please fill in all fields" });
     }
 
     if (!validator.isEmail(email)) {
@@ -58,9 +52,7 @@ const registerUser = async (req, res) => {
 
     const userExists = await userModel.findOne({ email });
     if (userExists) {
-      return res
-        .status(400)
-        .json({ success: false, message: "User already exists" });
+      return res.json({ success: false, message: "User already exists" });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -82,16 +74,32 @@ const registerUser = async (req, res) => {
         token: generateToken(user._id)
       });
     } else {
-      return res
-        .status(400)
-        .json({ success: false, message: "Invalid user data" });
+      return res.json({ success: false, message: "Invalid user data" });
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
+    res.json({ success: false, message: "Server error" });
   }
 };
 
-const adminLogin = async (req, res) => {};
+const adminLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const token = jwt.sign(email + password, process.env.JWT_SECRET);
+      res.json({ success: true, token });
+    } else {
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid email or password." });
+    }
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: "Server error" });
+  }
+};
 
 export { loginUser, registerUser, adminLogin };
