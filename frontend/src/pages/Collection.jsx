@@ -53,7 +53,7 @@ const Collection = () => {
 
     if (subcategory.length > 0) {
       tempProducts = tempProducts.filter((item) =>
-        subcategory.includes(item.subcategory)
+        subcategory.includes(item.subCategory)
       );
     }
 
@@ -113,6 +113,15 @@ const Collection = () => {
               />{' '}
               Women
             </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Kids"
+                onChange={toggleCategory}
+                checked={category.includes('Kids')}
+              />{' '}
+              Kids
+            </label>
           </div>
         </div>
 
@@ -147,6 +156,15 @@ const Collection = () => {
                 checked={subcategory.includes('Bodywear')}
               />{' '}
               Bodywear
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Winterwear"
+                onChange={toggleSubcategory}
+                checked={subcategory.includes('Winterwear')}
+              />{' '}
+              Winterwear
             </label>
           </div>
         </div>
