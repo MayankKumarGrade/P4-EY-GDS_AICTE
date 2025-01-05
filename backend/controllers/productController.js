@@ -6,8 +6,8 @@ const addProduct = async (req, res) => {
   try {
     const {
       name,
-      price,
       description,
+      price,
       category,
       subCategory,
       sizes,
@@ -20,28 +20,27 @@ const addProduct = async (req, res) => {
     const image4 = req.files.image4 && req.files.image4[0];
 
     const images = [image1, image2, image3, image4].filter(
-      item => item !== undefined
+      (item) => item !== undefined
     );
 
     let imagesUrl = await Promise.all(
-      images.map(async image => {
+      images.map(async (item) => {
         let result = await cloudinary.uploader.upload(item.path, {
-          public_id: `${Date.now()}`,
           resource_type: "image"
         });
         return result.secure_url;
       })
-    );
+    )
 
     const productData = {
       name,
       description,
-      price: Number(price),
       category,
+      price: Number(price),
       subCategory,
-      sizes: JSON.parse(sizes),
       bestseller: bestseller === "true" ? true : false,
-      images: imagesUrl,
+      sizes: JSON.parse(sizes),
+      image: imagesUrl,
       date: Date.now()
     };
 
@@ -57,7 +56,7 @@ const addProduct = async (req, res) => {
 
 const listProducts = async (req, res) => {
   try {
-    const products = await productModel.find();
+    const products = await productModel.find({});
     res.json({ success: true, products });
   } catch (error) {
     console.log(error);
