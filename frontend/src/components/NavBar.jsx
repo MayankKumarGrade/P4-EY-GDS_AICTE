@@ -7,7 +7,14 @@ import { ShopContext } from '../context/ShopContext';
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, getCartCount } = useContext(ShopContext);
+  const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+
+  const logout = () => {
+    navigate('/')
+    localStorage.removeItem('token')
+    setToken('')
+    setCartItems({})
+  }
 
   return (
     <div className="navbar">
@@ -31,28 +38,18 @@ const NavBar = () => {
           <p>CONTACT</p>
           <hr className="hr" />
         </NavLink>
-        <NavLink to="/login" className="navlink">
-          <p>LOGIN</p>
-          <hr className="hr" />
-        </NavLink>
-        <NavLink to="/register" className="navlink">
-          <p>REGISTER</p>
-          <hr className="hr" />
-        </NavLink>
       </ul>
       <div className="search">
         <Link to="/collection">
           <Search onClick={() => setShowSearch(true)} className="sicon" />
         </Link>
         <div className="user">
-          <Link to="/login">
-            <User className="uicon" />
-          </Link>
-          <div className="dropdown-menu">
+          <User onClick={()=> token ? null : navigate('/login')} className="uicon" />
+          {token && <div className="dropdown-menu">
             <p className="dmp">My Profile</p>
-            <p className="dmp">Orders</p>
-            <p className="dmp">Logout</p>
-          </div>
+            <p onClick={()=>navigate('/orders')}className="dmp">Orders</p>
+            <p onClick={logout} className="dmp">Logout</p>
+          </div>}
         </div>
         <Link to="/cart" className="carticon">
           <ShoppingCart />
@@ -109,13 +106,6 @@ const NavBar = () => {
             className="py-2 pl-6 border-b transition-all duration-300 hover:text-gray-900 hover:bg-gray-100 hover:scale-105 rounded-md"
           >
             LOGIN
-          </NavLink>
-          <NavLink
-            onClick={() => setVisible(false)}
-            to="/register"
-            className="py-2 pl-6 border-b transition-all duration-300 hover:text-gray-900 hover:bg-gray-100 hover:scale-105 rounded-md"
-          >
-            REGISTER
           </NavLink>
         </div>
       </div>

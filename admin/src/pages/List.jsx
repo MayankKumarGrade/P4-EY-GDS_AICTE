@@ -1,16 +1,16 @@
 import axios from "axios";
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { backendUrl, currency } from "../config";
 import { toast } from 'react-toastify';
 import { X } from 'lucide-react';
 
-const List = ({ token }) => {
+const List = ({token}) => {
   const [list, setList] = useState([]);
 
-  const fetchList = useCallback(async () => {
+  const fetchList = async () => {
     try {
-      const response = await axios.get(backendUrl +'/api/product/list',{ headers: { token } });
+      const response = await axios.get(backendUrl +'/api/product/list');
       if (response.data.success) {
         setList(response.data.products);
       } else {
@@ -20,7 +20,7 @@ const List = ({ token }) => {
       console.error("Error listing product:", error);
       toast.error(error.message);
     }
-  }, [token]);
+  }
 
   const removeProduct = async (id) => {
     try {
@@ -39,7 +39,7 @@ const List = ({ token }) => {
 
   useEffect(() => {
     fetchList();
-  }, [fetchList]);
+  }, []);
 
   return (
     <>
