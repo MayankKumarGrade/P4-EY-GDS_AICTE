@@ -10,8 +10,18 @@ import orderRouter from "./routes/orderRoute.js";
 import 'dotenv/config'
 
 const app = express();
-connectDB();
-connectCloudinary();
+
+// Wrap database connection and cloudinary connection with error handling
+const init = async () => {
+  try {
+    await connectDB();  // Assuming connectDB is an async function
+    await connectCloudinary();  // Assuming connectCloudinary is an async function
+  } catch (error) {
+    console.error("Failed to connect to DB or Cloudinary:", error);
+  }
+};
+
+init();
 
 app.use(express.json());
 app.use(cors());
@@ -25,4 +35,4 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-export default app;
+export default app;  // Export the app so Vercel can handle it correctly.
