@@ -10,7 +10,6 @@ import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
 
 const app = express();
-const port = process.env.PORT || 5000;
 connectDB();
 connectCloudinary();
 
@@ -19,13 +18,12 @@ app.use(cors());
 
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
-app.use("/api/cart", cartRouter)
-app.use("/api/order", orderRouter)
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// Export the app for Vercel
+export default app;
