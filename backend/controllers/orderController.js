@@ -20,7 +20,7 @@ const placeOrder = async (req, res) => {
 
     await userModel.findByIdAndUpdate(userId, { cartData: {} })
 
-    res.json({ success: true, message: "Order Placed! Enjoyyyy" })
+    res.json({ success: true, message: "Order Placed! Enjoy" })
 
   } catch (error) {
     console.log(error)
