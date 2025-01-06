@@ -1,9 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ShopContext } from '../context/shopContext';
 import Title from '../components/Title';
 
 const Orders = () => {
-  const { products, currency } = useContext(ShopContext);
+  const { backendUrl, token, currency } = useContext(ShopContext);
+
+  const [orderData, setorderData] = useState([])
+
+  const loadOrderData = async () => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
 
   return (
     <div className="mt-32 border-t pt-16">
@@ -12,7 +22,7 @@ const Orders = () => {
       </div>
 
       <div className="">
-        {products.slice(1, 4).map((item, index) => (
+        {orderData.map((item, index) => (
           <div
             key={index}
             className="py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:justify-between md:items-center gap-4"
