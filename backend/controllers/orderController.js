@@ -28,37 +28,55 @@ const placeOrder = async (req, res) => {
   }
 };
 
-const placeOrderStripe = async (res, req) => {
-  try {
+const placeOrderStripe = async (req, res) => {
+  try { 
   } catch (error) {}
 };
 
-const placeOrderRazorpay = async (res, req) => {
+const placeOrderRazorpay = async (req, res) => {
   try {
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+    res.json({success: false, message:error.message });
+  }
 };
 
-const placeOrderPaypal = async (res, req) => {
+const placeOrderPaypal = async (req, res) => {
   try {
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+    res.json({success: false, message:error.message });
+  }
 };
 
-const allOrders = async (res, req) => {
-  try {
-  } catch (error) {}
+const allOrders = async (req, res) => {
+  try { 
+    const orders = await orderModel.find({})
+      res.json ({success:true,orders})
+
+  } catch (error) {
+    console.log(error)
+    res.json({success: false, message:error.message });
+  }
 };
 
-const userOrders = async (res, req) => {
+const userOrders = async (req, res) => {
   try {
     const {userId} = req.body
     const orders = await orderModel.find({userId})
     res.json ({success:true, orders})
 
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+    res.json({success: false, message:error.message });
+  }
 };
 
-const updateStatus = async (res, req) => {
-  try {
+const updateStatus = async (req, res) => {
+  try { 
+    const {orderId, status} = req.body
+    await orderModel.findByIdAndUpdate(orderId, {status})
+    res.json({success:true,message:"Status Updated"})
   } catch (error) {
     console.log(error)
     res.json({success: false, message:error.message });
