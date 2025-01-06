@@ -7,6 +7,7 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import 'dotenv/config'
 
 const app = express();
 connectDB();
@@ -25,5 +26,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port 300');
+  console.log('Server is running on port 3000');
 });

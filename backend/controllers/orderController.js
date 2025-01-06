@@ -35,18 +35,12 @@ const placeOrderStripe = async (req, res) => {
 
 const placeOrderRazorpay = async (req, res) => {
   try {
-  } catch (error) {
-    console.log(error)
-    res.json({success: false, message:error.message });
-  }
+  } catch (error) {}
 };
 
 const placeOrderPaypal = async (req, res) => {
   try {
-  } catch (error) {
-    console.log(error)
-    res.json({success: false, message:error.message });
-  }
+  } catch (error) {}
 };
 
 const allOrders = async (req, res) => {
