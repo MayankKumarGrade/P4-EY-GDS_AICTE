@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ShopContext } from '../context/shopContext';
+import { ShopContext } from '../context/ShopContext';
 import Title from '../components/Title';
 import { Trash2 } from 'lucide-react';
 import CartTotal from '../components/CartTotal';
