@@ -1,5 +1,5 @@
 import express from "express";
-import adminAuth from "../middleware/adminauth.js";
+import adminAuth from "../middleware/adminAuth.js";
 import {
   addProduct,
   listProducts,
