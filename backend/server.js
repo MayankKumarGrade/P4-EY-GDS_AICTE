@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import "dotenv/config";
 import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/cloudinary.js";
 import productModel from "./models/productModel.js";
@@ -7,21 +8,11 @@ import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
-import 'dotenv/config'
 
 const app = express();
-
-// Wrap database connection and cloudinary connection with error handling
-const init = async () => {
-  try {
-    await connectDB();  // Assuming connectDB is an async function
-    await connectCloudinary();  // Assuming connectCloudinary is an async function
-  } catch (error) {
-    console.error("Failed to connect to DB or Cloudinary:", error);
-  }
-};
-
-init();
+const port = process.env.PORT || 5000;
+connectDB();
+connectCloudinary();
 
 app.use(express.json());
 app.use(cors());
@@ -35,4 +26,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-export default app;  // Export the app so Vercel can handle it correctly.
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
